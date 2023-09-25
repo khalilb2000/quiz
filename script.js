@@ -42,4 +42,8 @@ function showResult(){
     resultsContainer.textContent = `Your score: ${score} out of ${question.lengths}`;
 }
 
-nextButton.addEventListener("click")
+nextButton.addEventListener("click",() => {
+    if (currentQuestion < questions.length){
+        loadQuestion();
+    }
+})

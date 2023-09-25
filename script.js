@@ -6,9 +6,9 @@ const optionsContainer = document.getElementById("options-container");
 const nextButton = document.getElementById("next-button");
 const resultsContainer = document.getElementById("results-container");
 
-function Loadquestions(){
+function loadQuestion(){
 const question = questions[currentQuestion]
-questionText.textContent = question.questions;
+questionText.textContent = question.question;
 optionsContainer.innerHTML = '';
 
 questions.options.forEach((option, index) => {
@@ -21,13 +21,15 @@ questions.options.forEach((option, index) => {
 }
 
 function checkAnswer(selectedIndex){
-    const question = question[currentQuestion];
+    const question = questions[currentQuestion];
     if(question.options[selectedIndex]=== question.answer){
         score++;
+
+    currentQuestion++;
     }
 }
 
-currentQuestion++;
+
 
 if(currentQuestion < questions.length){
     loadQuestion();
@@ -39,7 +41,7 @@ function showResult(){
     questionText.textContent = "Quiz finished!";
     optionsContainer.innerHTML = '';
     nextButton.style.display = 'none';
-    resultsContainer.textContent = `Your score: ${score} out of ${question.lengths}`;
+    resultsContainer.textContent = `Your score: ${score} out of ${questions.length}`;
 }
 
 nextButton.addEventListener("click",() => {

@@ -1,3 +1,6 @@
+
+document.addEventListener("DOMContentLoaded", function(){
+
 let currentQuestion = 0
 let score = 0
 
@@ -11,7 +14,7 @@ const question = questions[currentQuestion]
 questionText.textContent = question.question;
 optionsContainer.innerHTML = '';
 
-questions.options.forEach((option, index) => {
+question.options.forEach((option, index) => {
     const optionElement = document.createElement("div");
     optionElement.textContent = option;
     optionElement.addEventListener("click",() => checkAnswer(index));
@@ -49,3 +52,4 @@ nextButton.addEventListener("click",() => {
         loadQuestion();
     }
 })
+});

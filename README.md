@@ -38,9 +38,8 @@ How to Play
 Click the "Next" button to move to the next question.
 Select your answer by clicking on one of the options.
 Your score will be displayed at the end of the quiz.
-Contributing
-[Explain how others can contribute to your project if you're open to contributions]
+
 
 License
-[Specify the license for your project, e.g., MIT License]
+ [MIT License]
 
